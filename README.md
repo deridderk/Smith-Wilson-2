@@ -36,9 +36,9 @@ And thus reproduce the outputs the vba code in excel also produces.
 1. Install the package
 2. Specify the above inputs, using ```alfamin = 0.05``` and the current ufr published by EIOPA (e.g., 0.33).
 3. Call the ```extrapolate_with_sw(rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)``` function, e.g.
-```output = (rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)```
-```print(output)```
-This output can thne easily be written to a csv file.
+```output = (rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)```, then
+```print(output)```.
+This output can then easily be written to a csv file.
 
 
 
