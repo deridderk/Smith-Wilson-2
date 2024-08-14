@@ -33,13 +33,69 @@ forward rate ac
 And thus reproduce the outputs the vba code in excel also produces.
 
 # How to use the package
-1. Install the package
-2. Specify the above inputs, using ```alfamin = 0.05``` and the current ufr published by EIOPA (e.g., 0.33).
-3. Call the ```extrapolate_with_sw(rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)``` function, e.g.
+1. Install the package using ```py -m pip install smithwilson2```, where some don't need ```py -m```
+2. Import the package using ```import smithwilson2.smithwilson2 as sw```
+3. Specify the above inputs, using ```alfamin = 0.05``` and the current ufr published by EIOPA (e.g., 0.33).
+4. Call the ```sw.extrapolate_with_sw(rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)``` function, e.g.
 ```output = (rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)```, then
 ```print(output)```.
 This output can then easily be written to a csv file.
 
+# Example file
+```
+import smithwilson2.smithwilson2 as sw
+from math import log
+import numpy as np
+import pandas as pd
+
+
+rates_obs =  [
+    3.590/100,
+    3.318/100,
+    3.126/100,
+    2.998/100,
+    2.911/100,
+    2.867/100,
+    2.829/100,
+    2.810/100,
+    2.806/100,
+    2.798/100,
+    2.805/100,
+    2.807/100,
+    2.812/100,
+    2.810/100,
+    2.806/100,
+    2.799/100,
+    2.785/100,
+    2.769/100,
+    2.750/100,
+    2.727/100
+    ]
+# Enter convergence maturity
+t2 = 60
+
+# Enter ufr
+ufr = 0.033
+
+# Enter minimum alpha
+alfamin = 0.05
+
+# Enter until which maturity we should extrapolate
+extrapolation_target = 80
+
+
+# the following variables should normally be kept at 1.
+# the number of coupons
+nrofcoup = 1 # for instrument case zero
+
+# the convergence tolerance in basis points, i.e., how far we allow our extrapolated rates to
+# be away from the ufr at the convergence maturity t2
+Tau = 1
+
+instrument = "Zero"
+sw.extrapolate_with_sw(rates_obs, ufr, t2, Tau, extrapolation_target, nrofcoup, instrument, alfamin)
+
+```
 
 
 
