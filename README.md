@@ -1,5 +1,5 @@
 # Fitting rates with the Smith-Wilson method
-This package can be used to extrapolate forward rates, spot rates and other outputs using the method developed by EIOPA for the extrpolation of risk-free term structures. Mathematical details can be found [here](https://www.eiopa.europa.eu/document/download/0ab82697-40a6-49ad-930f-211b649c1be9_en?filename=EIOPA-BoS-24-099-Report-on-the-Calculation-of-the-UFR-for-2025.pdf).
+This package can be used to extrapolate forward rates, spot rates and other outputs using the Smith-Wilson method required by EIOPA for the extrpolation of risk-free term structures. Mathematical details can be found [here](https://www.eiopa.europa.eu/document/download/0ab82697-40a6-49ad-930f-211b649c1be9_en?filename=EIOPA-BoS-24-099-Report-on-the-Calculation-of-the-UFR-for-2025.pdf).
 Using as input observed forward rates for the next 20 (or other value) years,
 the code extrapolates these rates for a given timeframe, e.g., 80 years. The other necessary inputs are explained below.
 It is different from the [smithwilson package](https://github.com/simicd/smith-wilson-py) insofar as the prior one uses a different optimisation method from the one EIOPA itself implements in Excel. The smithwilson2 package at hand reproduces EIOPAs result as close as a computer can.
