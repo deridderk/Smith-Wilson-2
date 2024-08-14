@@ -77,19 +77,18 @@ t2 = 60
 # Enter ufr
 ufr = 0.033
 
-# Enter minimum alpha
+# Enter minimum alpha, for EIOPA-requirements keep this at 0.05
 alfamin = 0.05
 
 # Enter until which maturity we should extrapolate
 extrapolation_target = 80
 
 
-# the following variables should normally be kept at 1.
 # the number of coupons
-nrofcoup = 1 # for instrument case zero
+nrofcoup = 1
+# for instrument case "Zero" (no coupon payments) this is set to 1 in the code no matter what we specify here
 
-# the convergence tolerance in basis points, i.e., how far we allow our extrapolated rates to
-# be away from the ufr at the convergence maturity t2
+# the convergence tolerance in basis points, i.e., how far we allow our extrapolated forward rates to be away from the ufr at the convergence maturity t2
 Tau = 1
 
 instrument = "Zero"
